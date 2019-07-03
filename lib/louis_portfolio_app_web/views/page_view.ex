@@ -1,3 +1,3 @@
-defmodule LouisPortfolioAppWeb.PageView do
+defmodule LouisPortfolioAppWeb.PostView do
   use LouisPortfolioAppWeb, :view
 end

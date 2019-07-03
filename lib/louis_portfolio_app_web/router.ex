@@ -16,11 +16,8 @@ defmodule LouisPortfolioAppWeb.Router do
   scope "/", LouisPortfolioAppWeb do
     pipe_through :browser
 
-    get "/", PageController, :index
+    get "/", HomeController, :index
+    get "/posts", PostController, :index
+    get "/posts/:slug", PostController, :show
   end
-
-  # Other scopes may use custom stacks.
-  # scope "/api", LouisPortfolioAppWeb do
-  #   pipe_through :api
-  # end
 end

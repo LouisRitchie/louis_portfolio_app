@@ -12,13 +12,10 @@
       <section class="container">
         <nav role="navigation">
           <ul>
-            <li><a href="#">Home</a></li>
+            <li><a href="/">Home</a></li>
+            <li><a href="/posts">Posts</a></li>
           </ul>
         </nav>
-        <a href="#">
-          <h1>Louis Ritchie</h1>
-        </a>
-        <h2>Software Portfolio</h2>
       </section>
     </header>
     <main role="main" class="container">
