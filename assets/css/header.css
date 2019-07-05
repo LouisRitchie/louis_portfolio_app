@@ -1,0 +1,115 @@
+nav {
+  border-bottom: 48px solid white;
+  display: flex;
+  flex-flow: justify-content;
+  justify-content: space-between;
+  height: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.overlayBlock1,
+.overlayBlock2 {
+  position: absolute;
+  z-index: 1;
+  height: 120px;
+  width: 100%;
+}
+
+.overlayBlock1::after,
+.overlayBlock2::after {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  content: '';
+  background: repeating-linear-gradient(to left, #779eff 0, #779eff 40px, #9a68ff 40px, #9a68ff 80px, #1e9aff 80px, #1e9aff 120px, #5b8aff 120px, #5b8aff 160px, #425eff 160px, #425eff 200px);
+}
+
+.overlayBlock1::after {
+  left: 0;
+}
+
+.overlayBlock2::after {
+  left: 224px;
+  margin-left: 120px;
+}
+
+.nameContainer,
+.navlinksContainer {
+  width: 224px;
+  margin: 0;
+  padding: 0;
+  position: relative;
+  z-index: 1;
+}
+
+
+.nameContainer {
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+}
+
+.nameContainer h1 {
+  margin: 4px 0;
+  text-align: left;
+  font-size: 2em;
+  padding-left: 24px;
+  white-space: nowrap;
+}
+
+.nameContainer p {
+  margin-top: 0;
+  padding-left: 24px;
+}
+
+.arrowBox1,
+.arrowBox2 {
+  width: 0;
+  height: 0;
+  display: table-cell;
+  top: -120px;
+  left: 224px;
+  position: absolute;
+}
+
+.arrowBox1 {
+  border: 120px solid white;
+  border-left: 120px solid #f8f7ff;
+}
+
+.arrowBox2 {
+  border: 120px solid #f8f7ff;
+  border-left: 120px solid white;
+  margin-left: 120px;
+}
+
+nav > *:last-child {
+
+}
+
+.navlinksContainer {
+  display: flex;
+  flex-flow: row;
+  justify-content: flex-end; 
+  align-items: center;
+  list-style: none;
+}
+
+.navlinksContainer > li {
+  padding: 0 48px 0 0;
+  font-weight: 700;
+}
+
+.searchContainer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.searchContainer > input {
+  background: none;
+  border: none;
+  font-size: 1em;
+}

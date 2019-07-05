@@ -4,24 +4,38 @@
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>LouisPortfolioApp · Phoenix Framework</title>
+    <title>Louis Ritchie</title>
     <link rel="stylesheet" href="<%= Routes.static_path(@conn, "/css/app.css") %>"/>
   </head>
   <body>
     <header>
       <section class="container">
-        <nav role="navigation">
-          <ul>
-            <li><a href="/">Home</a></li>
-            <li><a href="/posts">Posts</a></li>
-          </ul>
-        </nav>
       </section>
     </header>
     <main role="main" class="container">
+      <nav role="navigation">
+        <div class="overlayBlock2"></div>
+        <div class="nameContainer">
+          <div class="overlayBlock1"></div>
+          <a href="/">
+            <h1>Louis Ritchie</h1>
+          </a>
+          <p>louis@louisritchie.com</p>
+        </div>
+        <span>
+        <div class="arrowBox1"></div>
+        <div class="arrowBox2"></div>
+        </span>
+        <ul class="navlinksContainer">
+          <li><a href="/">Home</a></li>
+          <li><a href="/posts">Posts</a></li>
+        </ul>
+      </nav>
       <p class="alert alert-info" role="alert"><%= get_flash(@conn, :info) %></p>
       <p class="alert alert-danger" role="alert"><%= get_flash(@conn, :error) %></p>
-      <%= render @view_module, @view_template, assigns %>
+      <section>
+        <%= render @view_module, @view_template, assigns %>
+      </section>
     </main>
     <script type="text/javascript" src="<%= Routes.static_path(@conn, "/js/app.js") %>"></script>
   </body>

@@ -1,4 +1,8 @@
 /* This file is for your main application css. */
 
+@import "./shared.css";
+
+@import "./header.css";
+
 @import "./home.css";
 @import "./page.css";

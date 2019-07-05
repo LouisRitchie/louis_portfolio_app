@@ -1,4 +1,23 @@
-<a href="#">
-  <h1>Louis Ritchie</h1>
-</a>
 <h2>Software Portfolio</h2>
+
+
+<h3>Post 1</h3>
+
+<p>Here is my main post, Here is my main post, Here is my main post, Here is my main post, Here is my main post, Here is my main post, Here is my main post.</p>
+
+<pre>
+some code {
+  # inside the block comment
+}
+</pre>
+
+<br />
+<pre>
+some code {
+  # inside the block comment
+}
+</pre>
+
+<div class="searchContainer">
+  <input type="text" autofocus placeholder="Search" />
+</div>
