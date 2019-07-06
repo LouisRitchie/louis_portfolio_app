@@ -11,7 +11,8 @@ defmodule LouisPortfolioApp.Application do
       # Start the Ecto repository
       LouisPortfolioApp.Repo,
       # Start the endpoint when the application starts
-      LouisPortfolioAppWeb.Endpoint
+      LouisPortfolioAppWeb.Endpoint,
+      LouisPortfolioAppWeb.AdminEndpoint
       # Starts a worker by calling: LouisPortfolioApp.Worker.start_link(arg)
       # {LouisPortfolioApp.Worker, arg},
     ]

@@ -17,6 +17,15 @@ config :louis_portfolio_app, LouisPortfolioAppWeb.Endpoint,
   render_errors: [view: LouisPortfolioAppWeb.ErrorView, accepts: ~w(html json)],
   pubsub: [name: LouisPortfolioApp.PubSub, adapter: Phoenix.PubSub.PG2]
 
+# Configure admin endpoint
+config :louis_portfolio_app, LouisPortfolioAppWeb.AdminEndpoint,
+  url: [host: "localhost"],
+  secret_key_base: "LO1Ihqjmu4/26JJM5BQ2urwZ5FkoyDCuAYKEmqoyLRdmrx2+v1UwEO/2LDBTgZUE"
+  # Cant start PubSub like this a second time, because it's already started
+  # TODO successfully start pubsub, render_errors for this second endpoint.
+  # render_errors: [view: LouisPortfolioAppWeb.ErrorView, accepts: ~w(html json)],
+  # pubsub: [name: LouisPortfolioApp.PubSub, adapter: Phoenix.PubSub.PG2]
+
 # Configures Elixir's Logger
 config :logger, :console,
   format: "$time $metadata[$level] $message\n",

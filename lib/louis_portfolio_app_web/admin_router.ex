@@ -1,4 +1,4 @@
-defmodule LouisPortfolioAppWeb.Router do
+defmodule LouisPortfolioAppWeb.AdminRouter do
   use LouisPortfolioAppWeb, :router
 
   pipeline :browser do
@@ -19,5 +19,9 @@ defmodule LouisPortfolioAppWeb.Router do
     get "/", HomeController, :index
     get "/posts", PostController, :index
     get "/posts/:slug", PostController, :show
+
+    post "/posts/new", PostController, :create
+    post "/posts/:slug/delete", PostController, :delete
+    post "/posts/:slug/update", PostController, :update
   end
 end
