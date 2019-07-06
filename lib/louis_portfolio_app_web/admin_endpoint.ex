@@ -40,7 +40,7 @@ defmodule LouisPortfolioAppWeb.AdminEndpoint do
   plug Plug.Session,
     store: :cookie,
     key: "_louis_portfolio_app_admin_key",
-    signing_salt: "V48gUGJw"
+    signing_salt: "V48gUGJv"
 
   plug LouisPortfolioAppWeb.AdminRouter
 end

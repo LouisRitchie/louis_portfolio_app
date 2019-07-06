@@ -16,9 +16,9 @@ defmodule LouisPortfolioAppWeb.AdminRouter do
   scope "/", LouisPortfolioAppWeb do
     pipe_through :browser
 
-    get "/", HomeController, :index
-    get "/posts", PostController, :index
-    get "/posts/:slug", PostController, :show
+    get "/", HomeController, :index, [admin: true]
+    get "/posts", PostController, :index, [admin: true]
+    get "/posts/:slug", PostController, :show, [admin: true]
 
     post "/posts/new", PostController, :create
     post "/posts/:slug/delete", PostController, :delete
