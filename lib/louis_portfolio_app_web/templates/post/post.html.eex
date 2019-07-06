@@ -1,10 +1,27 @@
 <%= if @is_admin do %>
-<form action="/posts/<%= @post.slug %>/update" method="post">
-  <input type="text" name="title" placeholder="title" defaultValue="<%= @post.title %>"></input>
-  <textarea name="raw_md" rows="20"><%= @post.raw_md %></textarea>
-  <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
-  <input type="submit" name="submit">Submit</input>
-</form>
+  <center><h3><b>Admin:</b> Update Post</h3></center>
+  <hr />
+  <br />
+
+  <form action="/posts/<%= @post.slug %>/update" method="post">
+    <label for="title">Post Title</label>
+    <input type="text" name="title" value="<%= @post.title %>"></input>
+    <label for="slug">Post Slug</label>
+    <input type="text" name="slug" value="<%= @post.slug %>"></input>
+    <label for="slug">Post Markdown</label>
+    <textarea name="raw_md" rows="20"><%= @post.raw_md %></textarea>
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
+    <br />
+    <input type="submit" value="Update Post"></input>
+  </form>
+
+  <br />
+  <br />
+  <center><h3>Preview</h3></center>
+  <hr />
+  <br />
 <% end %>
 
+<div>
 <%= raw(markdown_to_html(@post.raw_md)) %>
+</div>

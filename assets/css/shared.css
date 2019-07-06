@@ -40,3 +40,23 @@ pre {
   font-weight: 400;
   border-left: 3px solid #68482e;
 }
+
+form {
+  display: flex;
+  flex-flow: column nowrap;
+}
+
+label {
+  font-size: 0.8em;
+}
+
+input[type="text"],
+textarea {
+  margin-bottom: 12px;
+  align-self: stretch;
+}
+
+input[type="submit"] {
+  margin-top: 12px;
+  align-self: flex-end;
+}

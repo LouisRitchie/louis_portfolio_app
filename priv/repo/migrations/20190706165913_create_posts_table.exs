@@ -5,7 +5,7 @@ defmodule LouisPortfolioApp.Repo.Migrations.CreatePostsTable do
     create table(:posts) do
       add :title, :string
       add :header_image, :string
-      add :raw_md, :string
+      add :raw_md, :text
       add :slug, :string
 
       timestamps()

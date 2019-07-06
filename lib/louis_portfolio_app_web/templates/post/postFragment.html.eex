@@ -1,1 +1,0 @@
-<p>Post fragment for id: <%= @id %></p>

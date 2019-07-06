@@ -1,3 +1,18 @@
+<%= if @is_admin do %>
+  <center><h3><b>Admin:</b> New Post</h3></center>
+  <hr />
+  <br />
+
+  <form action="/posts/new" method="post">
+    <input type="text" name="title" placeholder="title"></input>
+    <input type="text" name="slug" placeholder="slug"></input>
+    <textarea name="raw_md" rows="20"></textarea>
+    <input type="submit" value="New Post"></input>
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
+  </form>
+<% end %>
+
+<h2>All Posts</h2>
 <ul>
   <%= for post <- @posts do %>
     <li>
@@ -5,13 +20,3 @@
     </li>
   <% end %>
 </ul>
-
-<%= if @is_admin do %>
-  <form action="/posts/new" method="post">
-    <input type="text" name="title" placeholder="title"></input>
-    <input type="text" name="slug" placeholder="slug"></input>
-    <textarea name="raw_md" rows="20"></textarea>
-    <input type="submit">New Post</input>
-    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
-  </form>
-<% end %>

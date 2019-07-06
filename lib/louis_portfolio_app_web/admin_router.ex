@@ -20,8 +20,9 @@ defmodule LouisPortfolioAppWeb.AdminRouter do
     get "/posts", PostController, :index, [assigns: %{admin: true}]
     get "/posts/:slug", PostController, :show, [assigns: %{admin: true}]
 
-    post "/posts/new", PostController, :create
-    post "/posts/:slug/delete", PostController, :delete
-    post "/posts/:slug/update", PostController, :update
+    post "/posts/new", PostController, :create, [assigns: %{admin: true}]
+    post "/posts/:slug/delete", PostController, :delete, [assigns: %{admin: true}]
+    post "/posts/:slug/update", PostController, :update, [assigns: %{admin: true}]
+
   end
 end
