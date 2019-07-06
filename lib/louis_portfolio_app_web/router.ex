@@ -9,6 +9,10 @@ defmodule LouisPortfolioAppWeb.Router do
     plug :put_secure_browser_headers
   end
 
+  pipeline :admin do
+
+  end
+
   pipeline :api do
     plug :accepts, ["json"]
   end
@@ -19,5 +23,15 @@ defmodule LouisPortfolioAppWeb.Router do
     get "/", HomeController, :index
     get "/posts", PostController, :index
     get "/posts/:slug", PostController, :show
+
+  end
+
+  scope "/admin", LouisPortfolioAppWeb.Admin do
+    pipe_through :browser
+    pipe_through :admin
+
+    post "/posts/new", PostController, :create
+    post "/posts/:slug/delete", PostController, :delete
+    post "/posts/:slug/update", PostController, :update
   end
 end

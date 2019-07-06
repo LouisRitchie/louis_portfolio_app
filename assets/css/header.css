@@ -1,5 +1,4 @@
 header {
-  border-bottom: 48px solid white;
   display: flex;
   flex-flow: justify-content;
   justify-content: space-between;
@@ -8,34 +7,6 @@ header {
   overflow: hidden;
   margin: auto;
   background-color: #f8f7ff;
-}
-
-.overlayBlock1,
-.overlayBlock2 {
-  position: absolute;
-  z-index: 1;
-  height: 2px;
-  width: 100%;
-  bottom: 0;
-}
-
-.overlayBlock1::after,
-.overlayBlock2::after {
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  height: 2px;
-  width: 100%;
-  content: '';
-  background: repeating-linear-gradient(to left, #779eff 0, #779eff 40px, #9a68ff 40px, #9a68ff 80px, #1e9aff 80px, #1e9aff 120px, #5b8aff 120px, #5b8aff 160px, #425eff 160px, #425eff 200px);
-}
-
-.overlayBlock1::after {
-  left: 0;
-}
-
-.overlayBlock2::after {
-  margin-left: calc(100% - 324px);
 }
 
 .nameContainer,

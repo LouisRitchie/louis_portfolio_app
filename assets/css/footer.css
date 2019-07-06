@@ -3,6 +3,7 @@ footer {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
+  align-items: center;
   font-size: 0.8em;
   padding: 0 16px;
 }

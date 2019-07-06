@@ -5,13 +5,26 @@ body {
 }
 
 body > main {
+  max-width: 1000px;
   margin: auto;
-  max-width: 750px;
 }
 
-section {
+body > main > header,
+body > main > section {
+  max-width: 750px;
+  margin: auto;
+}
+
+body > main > section {
+  margin-top: -8px;
+}
+
+body > main > section > section {
   padding: 12px 24px;
   background-color: #f8f7ff;
   min-height: calc(100vh - 240px);
 }
 
+body > main > img {
+  max-width: 100%;
+}
