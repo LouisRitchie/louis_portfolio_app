@@ -6,9 +6,12 @@
   <% end %>
 </ul>
 
-<form action="/posts/<%= @post.slug %>/update" method="post">
-  <input type="text" name="title" placeholder="title" defaultValue="<%= @post.title %>"></input>
-  <textarea name="raw_md" rows="20"><%= @post.raw_md %></textarea>
-  <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
-  <input type="submit" name="submit">Submit</input>
-</form>
+<%= if @is_admin do %>
+  <form action="/posts/new" method="post">
+    <input type="text" name="title" placeholder="title"></input>
+    <input type="text" name="slug" placeholder="slug"></input>
+    <textarea name="raw_md" rows="20"></textarea>
+    <input type="submit">New Post</input>
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
+  </form>
+<% end %>
