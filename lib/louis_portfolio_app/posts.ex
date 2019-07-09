@@ -2,7 +2,7 @@ defmodule LouisPortfolioApp.Posts do
   alias LouisPortfolioApp.Repo
   alias LouisPortfolioApp.Posts.Post
 
-  def list, do: Repo.all(Post)
+  def list, do: Repo.all(Post) |> Enum.reject(fn post -> post.slug == "home" end)
 
   def get(slug) do
     Post

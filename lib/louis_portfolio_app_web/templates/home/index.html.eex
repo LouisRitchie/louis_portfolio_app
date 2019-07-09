@@ -1,24 +1,27 @@
-<h1>Software Portfolio</h1>
+<%= if @is_admin do %>
+  <center><h3><b>Admin:</b> Update Post</h3></center>
+  <hr />
+  <br />
 
-<h2>Section: My Great Software</h2>
+  <form class="post-form" action="/posts/<%= @post.slug %>/update" method="post">
+    <label for="title">Post Title</label>
+    <input type="text" name="title" value="<%= @post.title %>"></input>
+    <label for="slug">Post Slug</label>
+    <input type="text" name="slug" value="<%= @post.slug %>"></input>
+    <label for="slug">Post Markdown</label>
+    <textarea name="raw_md" rows="20"><%= @post.raw_md %></textarea>
+    <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
+    <br />
+    <input type="submit" value="Update Post"></input>
+  </form>
 
-<h3>Post 1</h3>
+  <br />
+  <br />
+  <center><h3>Preview</h3></center>
+  <hr />
+  <br />
+<% end %>
 
-<p>Here is my main post, Here is my main post, Here is my main post, Here is my main post, Here is my main post, Here is my main post, Here is my main post.</p>
-
-<pre>
-some code {
-  # inside the block comment
-}
-</pre>
-
-<br />
-<pre>
-some code {
-  # inside the block comment
-}
-</pre>
-
-<div class="searchContainer">
-  <input type="text" autofocus placeholder="Search" />
+<div>
+  <%= raw(LouisPortfolioAppWeb.PostView.markdown_to_html(@post.raw_md)) %>
 </div>

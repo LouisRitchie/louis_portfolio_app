@@ -37,7 +37,7 @@
         </section>
 
         <footer>
-          <p>Hello world</p>
+            <p>Built with vim</p>
           <p><a href="https://v1.louisritchie.com">View Old Version</a></p>
         </footer>
       </section>
