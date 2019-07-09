@@ -22,9 +22,9 @@ defmodule LouisPortfolioApp.Posts do
     |> Repo.update!
   end
 
-  def delete(id) do
+  def delete(slug) do
     Post
-    |> Repo.get(id)
+    |> Repo.get_by(slug: slug)
     |> Repo.delete!
   end
 end

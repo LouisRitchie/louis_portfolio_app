@@ -3,7 +3,7 @@
   <hr />
   <br />
 
-  <form action="/posts/new" method="post">
+  <form class="post-form" action="/posts/new" method="post">
     <input type="text" name="title" placeholder="title"></input>
     <input type="text" name="slug" placeholder="slug"></input>
     <textarea name="raw_md" rows="20"></textarea>
@@ -17,6 +17,13 @@
   <%= for post <- @posts do %>
     <li>
       <a href="/posts/<%= post.slug %>"><%= post.title %></a> last updated: <%= post.updated_at %>
+      <%= if @is_admin do %>
+        <form class="delete-post-form" action="/posts/<%= post.slug %>/delete" method="post">
+          <input type="hidden" name="slug" value="<%= post.slug %>"></input>
+          <input type="submit" value="Delete"></input>
+          <input type="hidden" id="_csrf_token"  name="_csrf_token" value="<%= Plug.CSRFProtection.get_csrf_token() %>">
+        </form>
+      <%= end %>
     </li>
   <% end %>
 </ul>

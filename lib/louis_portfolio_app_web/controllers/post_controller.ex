@@ -24,8 +24,17 @@ defmodule LouisPortfolioAppWeb.PostController do
   end
 
   def update(conn, %{"slug" => slug, "title" => title, "raw_md" => raw_md}) do
-    post = Posts.update(slug, %{slug: slug, title: title, raw_md: raw_md})
+    conn
+    |> assign(:post, Posts.update(slug, %{slug: slug, title: title, raw_md: raw_md}))
+    |> assign(:is_admin, Map.has_key?(conn.assigns, :admin))
+    |> render("post.html")
+  end
 
-    render(conn, "post.html", [post: post])
+  def delete(conn, %{"slug" => slug}) do
+    Posts.delete(slug)
+
+    conn
+    |> assign(:is_admin, Map.has_key?(conn.assigns, :admin))
+    |> render("index.html")
   end
 end
